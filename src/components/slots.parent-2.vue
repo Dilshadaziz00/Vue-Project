@@ -10,13 +10,13 @@
           <div class="row ">
             <div class="col-md-6">
         
-        <p>Product Name: {{ productName }}</p>
+        <!-- <p>Product Name: {{ productName }}</p> -->
 
               <label for="ProductName">Product Name</label>
               <b-form-input v-model="productName" id="ProductName" type="text" placeholder="Enter product name"></b-form-input>
             </div>
             <div class="col-md-6">
-                <p>Product Price: {{ productPrice }}</p>
+                <!-- <p>Product Price: {{ productPrice }}</p> -->
               <label for="ProductPrice">Price</label>
               <b-form-input v-model="productPrice" id="ProductPrice" type="number" placeholder="Enter product price"></b-form-input>
             </div>

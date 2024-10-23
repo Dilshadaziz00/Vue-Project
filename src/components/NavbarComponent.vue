@@ -35,6 +35,11 @@
 
               <!-- <a class="nav-link" href="#">Contact</a> -->
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'About' }" >About </router-link>
+
+             
+            </li>
           </ul>
           <button @click="logout" class="btn btn-danger">Logout</button>
 

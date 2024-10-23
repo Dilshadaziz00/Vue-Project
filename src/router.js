@@ -6,6 +6,7 @@ import Posts from './components/PostsComponent.vue'
 import PostRouterView from './components/PostRouterView.vue';
 import NotFound from './components/NotFound.vue';
 import MaxData from './components/countNumber.vue'
+import  About from './components/AboutUsComponent.vue'
 // import slotsChild from './components/slots-child.vue';
 import slotsParent2 from './components/slots.parent-2.vue';
 import slotsParent from './components/slots-parent.vue';
@@ -43,6 +44,12 @@ const routes = [
     name:'MaxData',
     component:  MaxData,
     meta: { title: 'MaxData', auth: true },
+  },
+  {
+    path:'/About',
+    name:'About',
+    component:  About,
+    meta: { title: 'About', auth: true },
   },
   {
     path: '/',
