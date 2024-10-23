@@ -13,7 +13,10 @@ AOS.init();
 import axios from './axios-config.js';
 
 Vue.prototype.$axios = axios;
+Vue.filter('upcase' ,function(val){
+  return val.toUpperCase();
 
+})
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store';

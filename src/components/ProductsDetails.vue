@@ -1,4 +1,12 @@
 <template>
+     <div :class="{ 'dark-mode': isDarkMode }">
+
+      <!-- Parent Component -->
+<data-list :items="items">
+  <template v-slot:default="slotProps">
+    <li>{{ slotProps.item.name }}</li>
+  </template>
+</data-list>
   <div v-if="product" class="product-detail d-flex">
     <div class="px-5 mb-3">
       <router-link :to="{ name: 'Posts' }">
@@ -70,16 +78,17 @@
       </ull>
     </div>
   </div>
-</template>ul
+</div>
+</template>
 <script>
 // import axios from 'axios';
-import { mapGetters,mapMutations } from 'vuex';
+import {mapState, mapGetters,mapMutations } from 'vuex';
 
 export default {
   name: 'ProductDetail',
   props: ['id'],
   computed: {
-   
+   ...mapState(['isDarkMode']),
 
     // Access query parameters
     ...mapGetters(['getFruit','getTimer']),
@@ -138,6 +147,15 @@ export default {
 </script>
 
 <style scoped>
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+.dark-mode .card{
+  background-color: #121212;
+  border: 1px solid #3d3d37;
+  color: white;
+}
 .ellipsis-single-line {
   white-space: nowrap;
   overflow: hidden;

@@ -45,7 +45,8 @@
 export default {
   name: 'LoginComponent',
   data() {
-    return {  pwd_type:'password',
+    return {
+        pwd_type:'password',
 
       showErrorMessage: false,
       formData: {
@@ -67,8 +68,8 @@ export default {
       try {
         const response = await this.$axios.post('/auth/login', this.formData);
         console.log('Login successful. Response:', response);
-        if (response && response.data.token) {
-          localStorage.setItem('demoUserToken', response.data.token);
+        if (response && response.data.refreshToken) {
+          localStorage.setItem('demoUserToken', response.data.refreshToken);
           this.$router.push({ name: 'Posts' });
         }
       } catch (error) {

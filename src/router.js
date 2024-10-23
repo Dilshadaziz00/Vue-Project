@@ -5,14 +5,15 @@ import ProductDetail from './components/ProductsDetails.vue';
 import Posts from './components/PostsComponent.vue'
 import PostRouterView from './components/PostRouterView.vue';
 import NotFound from './components/NotFound.vue';
+import MaxData from './components/countNumber.vue'
+// import slotsChild from './components/slots-child.vue';
+import slotsParent2 from './components/slots.parent-2.vue';
+import slotsParent from './components/slots-parent.vue';
 Vue.use(Router); // Install Vue Router plugin
 
 // Define your routes
 const routes = [
-  {
-    path: '/',
-    redirect: '/posts',
-  },
+  
   
   {
     path: '/login',
@@ -21,9 +22,27 @@ const routes = [
     meta: { title: 'Login', auth: false },
   },
   {
+    path: '/slotsParent2',
+    name: 'slotsParent2',
+    component: slotsParent2,
+    meta: { title: 'slotsParent2', auth: true },
+  },
+  {
+    path: '/slotsParent',
+    name: 'slotsParent',
+    component: slotsParent,
+    meta: { title: 'slotsParent', auth: true },
+  },
+  {
     path:'*',
     name:'NotFound',
     component:  NotFound,
+  },
+  {
+    path:'/MaxData',
+    name:'MaxData',
+    component:  MaxData,
+    meta: { title: 'MaxData', auth: true },
   },
   {
     path: '/',
@@ -37,6 +56,7 @@ const routes = [
         component: Posts,
         meta: { title: 'Posts', auth: true }
       },
+
       {
         path: '/posts/product-detail/:id', // Child route path
         name: 'ProductDetail',
@@ -84,6 +104,7 @@ router.beforeEach((to, from, next) => {
   } else {
     if (token)
       next({ name: 'Posts' });
+   
     next();
   }
 });
